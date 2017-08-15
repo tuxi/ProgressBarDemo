@@ -19,7 +19,10 @@ public extension UINavigationController {
         
         let defaultHeight = CGFloat(2.0)
         
-        let frame = CGRect(x: 0, y: navigationBar.frame.height - defaultHeight, width: navigationBar.frame.width, height: defaultHeight)
+        let frame = CGRect(x: 0,
+                           y: navigationBar.frame.height - defaultHeight,
+                           width: navigationBar.frame.width,
+                           height: defaultHeight)
         
         let progressView = OSProgressView(frame: frame)
         

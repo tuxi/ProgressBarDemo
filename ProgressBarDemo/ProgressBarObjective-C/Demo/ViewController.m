@@ -19,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     NSInteger i = 0;
-    NSArray *centerYConstantArray = @[@-30.0, @0.0, @30.0];
+    NSArray *centerYConstantArray = @[@-50.0, @0.0, @50.0];
     NSArray *btnTitleArray = @[@"update progress", @"finish progress", @"cancel progress"];
     do {
         __unused UIButton *updateProgressBtn = ({
@@ -27,8 +27,20 @@
             
             btn.translatesAutoresizingMaskIntoConstraints = NO;
             
-            NSLayoutConstraint *centerX = [NSLayoutConstraint constraintWithItem:btn attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0];
-            NSLayoutConstraint *centerY = [NSLayoutConstraint constraintWithItem:btn attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:[centerYConstantArray[i] floatValue]];
+            NSLayoutConstraint *centerX = [NSLayoutConstraint constraintWithItem:btn
+                                                                       attribute:NSLayoutAttributeCenterX
+                                                                       relatedBy:NSLayoutRelationEqual
+                                                                          toItem:self.view
+                                                                       attribute:NSLayoutAttributeCenterX
+                                                                      multiplier:1.0
+                                                                        constant:0.0];
+            NSLayoutConstraint *centerY = [NSLayoutConstraint constraintWithItem:btn
+                                                                       attribute:NSLayoutAttributeCenterY
+                                                                       relatedBy:NSLayoutRelationEqual
+                                                                          toItem:self.view
+                                                                       attribute:NSLayoutAttributeCenterY
+                                                                      multiplier:1.0
+                                                                        constant:[centerYConstantArray[i] floatValue]];
             [btn setTitle:btnTitleArray[i] forState:UIControlStateNormal];
             [btn addTarget:self action:@selector(updateProgressValue:) forControlEvents:UIControlEventTouchUpInside];
             [self.view addSubview:btn];

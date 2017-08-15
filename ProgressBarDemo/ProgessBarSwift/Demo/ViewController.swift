@@ -10,26 +10,65 @@ import UIKit
 
 class ViewController: UIViewController {
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         navigationController?.progressView.progressHeight = 2
         navigationController!.progressView.trackTintColor = UIColor.clear
         navigationController!.progressView.progressTintColor = UIColor.blue
+        
+        var i: NSInteger = 0
+        let btnTitleArray = ["update progress", "finish progress", "cancel progress"]
+        let centerYConstantArray = [NSNumber.init(value: -50.0), NSNumber.init(value: 0.0), NSNumber.init(value: 50.0)]
+        while i < 3 {
+            let btn: UIButton = UIButton(type: .system)
+            btn.translatesAutoresizingMaskIntoConstraints = false
+            let centerX = NSLayoutConstraint(item: btn,
+                                             attribute: .centerX,
+                                             relatedBy: .equal,
+                                             toItem: view,
+                                             attribute: .centerX,
+                                             multiplier: 1.0,
+                                             constant: 0.0)
+            let centerY = NSLayoutConstraint(item: btn,
+                                             attribute: .centerY,
+                                             relatedBy: .equal,
+                                             toItem: view,
+                                             attribute: .centerY,
+                                             multiplier: 1.0,
+                                             constant: CGFloat(centerYConstantArray[i].floatValue))
+            btn.setTitle(btnTitleArray[i], for: .normal)
+            btn.addTarget(self, action: #selector(ViewController.updateProgress(_:)), for: .touchUpInside)
+            view.addSubview(btn)
+            btn.tag = i + 100
+            view.addConstraints([centerX, centerY])
+            i += 1
+        }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func updateProgress(_ sender: Any) {
+    @objc private func updateProgress(_ sender: UIButton) {
         
-        let progress = navigationController!.progressView.progress
+        let idx = sender.tag - 100
         
-        navigationController!.progressView.setProgress(progress: CGFloat(progress+0.1), animated: true)
+        switch idx {
+        case 0:
+            let progress = navigationController!.progressView.progress
+            navigationController!.progressView.setProgress(progress: CGFloat(progress+0.1), animated: true)
+         break
+        case 1:
+            navigationController!.progressView.finishProgress()
+            break
+        default:
+            navigationController!.progressView.cancelProgress()
+         break
+            
+        }
+        
     }
 
 }

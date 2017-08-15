@@ -45,15 +45,39 @@ public final class OSProgressView: UIImageView {
     /* ====================================================================== */
     public override init(frame: CGRect) {
         
-        progressBarWidthConstraint = NSLayoutConstraint(item: progressBar, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: frame.width * CGFloat(progress))
+        progressBarWidthConstraint = NSLayoutConstraint(item: progressBar,
+                                                        attribute: .width,
+                                                        relatedBy: .equal,
+                                                        toItem: nil,
+                                                        attribute: .notAnAttribute,
+                                                        multiplier: 1.0,
+                                                        constant: frame.width * CGFloat(progress))
         
         super.init(frame: frame);
         
-        let leftConstraint = NSLayoutConstraint(item: progressBar, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0.0)
+        let leftConstraint = NSLayoutConstraint(item: progressBar,
+                                                attribute: .left,
+                                                relatedBy: .equal,
+                                                toItem: self,
+                                                attribute: .left,
+                                                multiplier: 1.0,
+                                                constant: 0.0)
         
-        let bottomConstraint = NSLayoutConstraint(item: progressBar, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0.0)
+        let bottomConstraint = NSLayoutConstraint(item: progressBar,
+                                                  attribute: .bottom,
+                                                  relatedBy: .equal,
+                                                  toItem: self,
+                                                  attribute: .bottom,
+                                                  multiplier: 1.0,
+                                                  constant: 0.0)
         
-        let topConstraint = NSLayoutConstraint(item: progressBar, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0.0)
+        let topConstraint = NSLayoutConstraint(item: progressBar,
+                                               attribute: .top,
+                                               relatedBy: .equal,
+                                               toItem: self,
+                                               attribute: .top,
+                                               multiplier: 1.0,
+                                               constant: 0.0)
         
         addSubview(progressBar)
         
