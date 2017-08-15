@@ -49,6 +49,13 @@ class ViewController: UIViewController {
             i += 1
         }
         
+        navigationController?.progressView.cancellationHandler = {
+            print("cancellationHandler")
+        }
+        
+        navigationController?.progressView.completionHandler = {
+            print("completionHandler")
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -66,11 +73,11 @@ class ViewController: UIViewController {
             navigationController!.progressView.setProgress(progress: CGFloat(progress+0.1), animated: true)
          break
         case 1:
-            navigationController!.progressView.finishProgress()
+            navigationController!.progressView.completed()
             invalidateTimer()
             break
         case 2:
-            navigationController!.progressView.cancelProgress()
+            navigationController!.progressView.cancel()
             invalidateTimer()
             break
         default:
@@ -84,12 +91,15 @@ class ViewController: UIViewController {
     @objc private func autoUpdateProgress() {
         
         if timer == nil {
-            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(autoUpdateProgress), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(autoUpdateProgress), userInfo: nil, repeats: true)
             return;
         }
         
         var progress = navigationController!.progressView.progress
-        progress += 0.1
+        if progress >= 1 {
+            progress = 0.0
+        }
+        progress += 0.05
         navigationController!.progressView.setProgress(progress: CGFloat(progress), animated: true)
         if progress >= 1.0 {
             invalidateTimer()

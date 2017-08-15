@@ -12,8 +12,13 @@ public final class OSProgressView: UIImageView {
 
     internal var progress: CGFloat = 0 {
         didSet {
-            progress = min(1, progress)
+            progress = min(1.0, progress)
             progressBarWidthConstraint.constant = bounds.width * CGFloat(progress)
+            if progress == 1.0 {
+                if let completionHandler = self.completionHandler {
+                    completionHandler()
+                }
+            }
         }
     }
     
@@ -108,21 +113,31 @@ public final class OSProgressView: UIImageView {
         }
     }
     
-    public func finishProgress() {
+    public var cancellationHandler: (() -> Swift.Void)?
+    public var completionHandler: (() -> Swift.Void)?
+    
+    public func completed() {
         setProgress(progress: 1.0, animated: true)
         
         UIView.animate(withDuration: 0.25, animations: {
             self.progressBar.alpha = 0.0
         }) { (finished: Bool) in
             self.progress = 0.0
+            if let completionHandler = self.completionHandler {
+                completionHandler()
+            }
         }
     }
     
-    public func cancelProgress() {
+    public func cancel() {
         setProgress(progress: 0.0, animated: true)
         
-        UIView.animate(withDuration: 0.25) {
+        UIView.animate(withDuration: 0.25, animations: { 
             self.alpha = 0.0
+        }) { (finished: Bool) in
+            if let cancellationHandler = self.cancellationHandler {
+                cancellationHandler()
+            }
         }
     }
     
