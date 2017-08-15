@@ -70,16 +70,16 @@ public extension UINavigationController {
     }
    
     public func setProgress(progress: CGFloat, animated: Bool) {
-        progressView.bar.alpha = 1.0
+        progressView.progressBar.alpha = 1.0
         progressView.setProgress(progress: progress, animate: animated)
     }
     
     public func finishProgress() {
-        progressView.bar.alpha = 1.0
+        progressView.progressBar.alpha = 1.0
         progressView.setProgress(progress: 1.0, animate: true)
         
         UIView.animate(withDuration: 0.25, animations: {
-            self.progressView.bar.alpha = 0.0
+            self.progressView.progressBar.alpha = 0.0
         }) { (finished: Bool) in
             self.progressView.progress = 0.0
         }

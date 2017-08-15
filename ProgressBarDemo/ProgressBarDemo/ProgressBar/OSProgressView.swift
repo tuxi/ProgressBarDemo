@@ -8,18 +8,18 @@
 
 import UIKit
 
-public final class OSProgressView: UIView {
+public final class OSProgressView: UIImageView {
 
     internal var progress: CGFloat = 0 {
         didSet {
             progress = min(1, progress)
-            barWidthConstraint.constant = bounds.width * CGFloat(progress)
+            progressBarWidthConstraint.constant = bounds.width * CGFloat(progress)
         }
     }
     
-    internal let bar = UIView()
+    internal let progressBar = UIImageView()
     
-    fileprivate let barWidthConstraint : NSLayoutConstraint
+    fileprivate let progressBarWidthConstraint : NSLayoutConstraint
     
     public dynamic var trackTintColor : UIColor? = .clear {
         didSet {
@@ -29,7 +29,7 @@ public final class OSProgressView: UIView {
     
     public dynamic var progressTintColor : UIColor? = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1) {
         didSet {
-            bar.backgroundColor = progressTintColor
+            progressBar.backgroundColor = progressTintColor
         }
     }
     
@@ -45,24 +45,24 @@ public final class OSProgressView: UIView {
     /* ====================================================================== */
     public override init(frame: CGRect) {
         
-        barWidthConstraint = NSLayoutConstraint(item: bar, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: frame.width * CGFloat(progress))
+        progressBarWidthConstraint = NSLayoutConstraint(item: progressBar, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: frame.width * CGFloat(progress))
         
         super.init(frame: frame);
         
-        let leftConstraint = NSLayoutConstraint(item: bar, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0.0)
+        let leftConstraint = NSLayoutConstraint(item: progressBar, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0.0)
         
-        let bottomConstraint = NSLayoutConstraint(item: bar, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0.0)
+        let bottomConstraint = NSLayoutConstraint(item: progressBar, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0.0)
         
-        let topConstraint = NSLayoutConstraint(item: bar, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0.0)
+        let topConstraint = NSLayoutConstraint(item: progressBar, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0.0)
         
-        addSubview(bar)
+        addSubview(progressBar)
         
-        bar.backgroundColor = trackTintColor
+        progressBar.backgroundColor = trackTintColor
         
-        bar.translatesAutoresizingMaskIntoConstraints = false
+        progressBar.translatesAutoresizingMaskIntoConstraints = false
         
         addConstraints([
-            barWidthConstraint,
+            progressBarWidthConstraint,
             leftConstraint,
             bottomConstraint,
             topConstraint
