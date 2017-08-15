@@ -14,11 +14,15 @@ public final class OSProgressView: UIImageView {
         didSet {
             progress = min(1.0, progress)
             progressBarWidthConstraint.constant = bounds.width * CGFloat(progress)
+            if let progressHandler = self.progressHandler {
+                progressHandler(progress)
+            }
             if progress == 1.0 {
                 if let completionHandler = self.completionHandler {
                     completionHandler()
                 }
             }
+            
         }
     }
     
@@ -115,6 +119,7 @@ public final class OSProgressView: UIImageView {
     
     public var cancellationHandler: (() -> Swift.Void)?
     public var completionHandler: (() -> Swift.Void)?
+    public var progressHandler: ((_ fractionCompleted: CGFloat) -> Swift.Void)?
     
     public func completed() {
         setProgress(progress: 1.0, animated: true)

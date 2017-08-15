@@ -56,6 +56,11 @@ class ViewController: UIViewController {
         navigationController?.progressView.completionHandler = {
             print("completionHandler")
         }
+        
+        navigationController?.progressView.progressHandler = { (progress: CGFloat) in
+            print(progress)
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
