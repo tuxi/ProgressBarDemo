@@ -18,8 +18,14 @@
 
 @property (nonatomic, strong) UIColor *trackTintColor;
 
+@property (nonatomic, assign) CGFloat progressHeight;
+
 - (instancetype)initWithFrame:(CGRect)frame;
 
 - (void)setProgress:(CGFloat)progress animated:(BOOL)animated;
+
+- (void)cancelProgress;
+
+- (void)finishProgress;
 
 @end

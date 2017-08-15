@@ -7,21 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OSProgressView.h"
 
 @interface UINavigationController (OSProgressBar)
 
-@property (nonatomic, strong) UIColor *progressTintColor;
-
-@property (nonatomic, strong) UIColor *progressTrackTintColor;
-
-@property (nonatomic, assign) CGFloat progress;
-
-@property (nonatomic, assign) CGFloat progressHeight;
-
-- (void)setProgress:(CGFloat)progress animated:(BOOL)animated;
-
-- (void)finishProgress;
-
-- (void)cancelProgress;
+@property (nonatomic, readonly) OSProgressView *progressView;
 
 @end

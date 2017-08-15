@@ -65,6 +65,7 @@
 ////////////////////////////////////////////////////////////////////////
 
 - (void)setProgress:(CGFloat)progress animated:(BOOL)animated {
+    self.progressBar.alpha = 1.0;
     self.progress = progress;
     NSTimeInterval duration = animated ? 0.1 : 0.0;
     [UIView animateWithDuration:duration animations:^{
@@ -95,6 +96,38 @@
     CGFloat tempProgress = self.progress;
     self.progress = tempProgress;
 }
+
+- (void)finishProgress {
+    
+    [self setProgress:1.0 animated:YES];
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        self.progressBar.alpha = 0.0;
+    } completion:^(BOOL finished) {
+        self.progress = 0.0;
+    }];
+}
+
+- (void)cancelProgress {
+    
+    [self setProgress:0.0 animated:YES];
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        self.progressBar.alpha = 0.0;
+    }];
+}
+
+- (void)setProgressHeight:(CGFloat)progressHeight {
+    CGRect rect = self.frame;
+    rect.origin.y = self.superview.frame.size.height - progressHeight;
+    rect.size.height = progressHeight;
+    self.frame = rect;
+}
+
+- (CGFloat)progressHeight {
+    return self.frame.size.height;
+}
+
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - Private methods
