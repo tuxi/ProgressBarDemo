@@ -74,9 +74,9 @@ public final class OSProgressView: UIImageView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    internal func setProgress(progress: CGFloat, animate: Bool) {
-        
-        let duration : TimeInterval = animate ? 0.1 : 0.0
+    internal func setProgress(progress: CGFloat, animated: Bool) {
+        progressBar.alpha = 1.0
+        let duration : TimeInterval = animated ? 0.1 : 0.0
         
         self.progress = progress
         
@@ -84,4 +84,33 @@ public final class OSProgressView: UIImageView {
             self.layoutIfNeeded()
         }
     }
+    
+    public func finishProgress() {
+        setProgress(progress: 1.0, animated: true)
+        
+        UIView.animate(withDuration: 0.25, animations: {
+            self.progressBar.alpha = 0.0
+        }) { (finished: Bool) in
+            self.progress = 0.0
+        }
+    }
+    
+    public func cancelProgress() {
+        setProgress(progress: 0.0, animated: true)
+        
+        UIView.animate(withDuration: 0.25) {
+            self.alpha = 0.0
+        }
+    }
+    
+    public var progressHeight: CGFloat {
+        get {
+            return frame.height
+        }
+        set {
+            frame.origin.y = superview!.frame.height - newValue
+            frame.size.height = newValue
+        }
+    }
+
 }

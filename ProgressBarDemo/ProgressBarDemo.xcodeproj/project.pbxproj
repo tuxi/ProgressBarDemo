@@ -210,12 +210,12 @@
 				TargetAttributes = {
 					18060F6B1F42BE850049FC17 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = NKW67GFDHM;
+						DevelopmentTeam = H3Q63DY2LV;
 						ProvisioningStyle = Automatic;
 					};
 					18060FA31F42C0FC0049FC17 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = NKW67GFDHM;
+						DevelopmentTeam = H3Q63DY2LV;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -414,7 +414,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NKW67GFDHM;
+				DEVELOPMENT_TEAM = H3Q63DY2LV;
 				INFOPLIST_FILE = ProgessBarSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ossey.ProgessBarSwift;
@@ -427,7 +427,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NKW67GFDHM;
+				DEVELOPMENT_TEAM = H3Q63DY2LV;
 				INFOPLIST_FILE = ProgessBarSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ossey.ProgessBarSwift;
@@ -440,7 +440,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NKW67GFDHM;
+				DEVELOPMENT_TEAM = H3Q63DY2LV;
 				INFOPLIST_FILE = "ProgressBarObjective-C/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ossey.ProgressBarObjective-C";
@@ -452,7 +452,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NKW67GFDHM;
+				DEVELOPMENT_TEAM = H3Q63DY2LV;
 				INFOPLIST_FILE = "ProgressBarObjective-C/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ossey.ProgressBarObjective-C";

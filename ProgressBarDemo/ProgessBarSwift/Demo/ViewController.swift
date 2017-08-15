@@ -15,7 +15,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        navigationController?.progressHeight = 2
+        navigationController?.progressView.progressHeight = 2
+        navigationController!.progressView.trackTintColor = UIColor.clear
+        navigationController!.progressView.progressTintColor = UIColor.blue
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,11 +27,9 @@ class ViewController: UIViewController {
 
     @IBAction func updateProgress(_ sender: Any) {
         
-        let progress = navigationController!.progress
+        let progress = navigationController!.progressView.progress
         
-        navigationController!.setProgress(progress: CGFloat(progress+0.1), animated: true)
-        navigationController!.progressTrackTintColor = UIColor.red
-        navigationController!.progressTintColor = UIColor.blue
+        navigationController!.progressView.setProgress(progress: CGFloat(progress+0.1), animated: true)
     }
 
 }

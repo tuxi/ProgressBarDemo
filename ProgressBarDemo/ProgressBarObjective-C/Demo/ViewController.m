@@ -43,7 +43,7 @@
 
     
     self.navigationController.progressView.progressHeight = 2.0;
-    self.navigationController.progressView.progressTintColor = [UIColor greenColor];
+    self.navigationController.progressView.progressTintColor = [UIColor redColor];
     self.navigationController.progressView.trackTintColor = [UIColor clearColor];
 }
 

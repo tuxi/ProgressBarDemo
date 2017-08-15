@@ -10,44 +10,7 @@ import UIKit
 
 public extension UINavigationController {
     
-    public var progressHeight: CGFloat {
-        get {
-            return progressView.frame.height
-        }
-        set {
-            progressView.frame.origin.y = navigationBar.frame.height - newValue
-            progressView.frame.size.height = newValue
-        }
-    }
-    
-    public var progressTrackTintColor: UIColor? {
-        get {
-            return progressView.trackTintColor
-        }
-        set {
-            progressView.trackTintColor = newValue
-        }
-    }
-    
-    public var progressTintColor: UIColor? {
-        get {
-            return progressView.progressTintColor
-        }
-        set {
-            progressView.progressTintColor = newValue
-        }
-    }
-    
-    public var progress : CGFloat {
-        get {
-         return progressView.progress
-        }
-        set {
-            progressView.progress = newValue
-        }
-    }
-    
-    private var progressView: OSProgressView {
+    public var progressView: OSProgressView {
         for subview in navigationBar.subviews {
             if let progressView = subview as? OSProgressView {
                 return progressView
@@ -69,27 +32,5 @@ public extension UINavigationController {
         return progressView
     }
    
-    public func setProgress(progress: CGFloat, animated: Bool) {
-        progressView.progressBar.alpha = 1.0
-        progressView.setProgress(progress: progress, animate: animated)
-    }
-    
-    public func finishProgress() {
-        progressView.progressBar.alpha = 1.0
-        progressView.setProgress(progress: 1.0, animate: true)
-        
-        UIView.animate(withDuration: 0.25, animations: {
-            self.progressView.progressBar.alpha = 0.0
-        }) { (finished: Bool) in
-            self.progressView.progress = 0.0
-        }
-    }
-    
-    public func cancelProgress() {
-        progressView.setProgress(progress: 0.0, animate: true)
-        
-        UIView.animate(withDuration: 0.25) { 
-            self.progressView.alpha = 0.0
-        }
-    }
+   
 }
