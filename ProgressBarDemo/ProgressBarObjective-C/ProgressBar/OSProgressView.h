@@ -10,4 +10,16 @@
 
 @interface OSProgressView : UIImageView
 
+@property (nonatomic, strong) UIImageView *progressBar;
+
+@property (nonatomic, assign) CGFloat progress;
+
+@property (nonatomic, strong) UIColor *progressTintColor;
+
+@property (nonatomic, strong) UIColor *trackTintColor;
+
+- (instancetype)initWithFrame:(CGRect)frame;
+
+- (void)setProgress:(CGFloat)progress animated:(BOOL)animated;
+
 @end

@@ -20,7 +20,7 @@ public extension UINavigationController {
         }
     }
     
-    public var trackTintColor: UIColor? {
+    public var progressTrackTintColor: UIColor? {
         get {
             return progressView.trackTintColor
         }

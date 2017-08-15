@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         let progress = navigationController!.progress
         
         navigationController!.setProgress(progress: CGFloat(progress+0.1), animated: true)
-        navigationController!.trackTintColor = UIColor.red
+        navigationController!.progressTrackTintColor = UIColor.red
         navigationController!.progressTintColor = UIColor.blue
     }
 
