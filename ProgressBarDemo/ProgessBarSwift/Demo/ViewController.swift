@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    private var timer: Timer?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -18,9 +21,10 @@ class ViewController: UIViewController {
         navigationController!.progressView.progressTintColor = UIColor.blue
         
         var i: NSInteger = 0
-        let btnTitleArray = ["update progress", "finish progress", "cancel progress"]
-        let centerYConstantArray = [NSNumber.init(value: -50.0), NSNumber.init(value: 0.0), NSNumber.init(value: 50.0)]
-        while i < 3 {
+        let btnTitleArray = ["update progress", "finish progress", "cancel progress", "auto update progress"]
+        let centerYConstantArray = [NSNumber.init(value: -50.0), NSNumber.init(value: 0.0), NSNumber.init(value: 50.0), NSNumber.init(value: 100)]
+        
+        while i < 4 {
             let btn: UIButton = UIButton(type: .system)
             btn.translatesAutoresizingMaskIntoConstraints = false
             let centerX = NSLayoutConstraint(item: btn,
@@ -44,6 +48,7 @@ class ViewController: UIViewController {
             view.addConstraints([centerX, centerY])
             i += 1
         }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,14 +67,47 @@ class ViewController: UIViewController {
          break
         case 1:
             navigationController!.progressView.finishProgress()
+            invalidateTimer()
+            break
+        case 2:
+            navigationController!.progressView.cancelProgress()
+            invalidateTimer()
             break
         default:
-            navigationController!.progressView.cancelProgress()
+            autoUpdateProgress()
          break
             
         }
         
     }
 
+    @objc private func autoUpdateProgress() {
+        
+        if timer == nil {
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(autoUpdateProgress), userInfo: nil, repeats: true)
+            return;
+        }
+        
+        var progress = navigationController!.progressView.progress
+        progress += 0.1
+        navigationController!.progressView.setProgress(progress: CGFloat(progress), animated: true)
+        if progress >= 1.0 {
+            invalidateTimer()
+        }
+        
+    }
+    
+    private func invalidateTimer() {
+        if timer == nil {
+            return
+        }
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    deinit {
+        invalidateTimer()
+    }
+    
 }
 

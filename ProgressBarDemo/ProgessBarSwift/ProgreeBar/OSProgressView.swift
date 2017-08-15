@@ -52,7 +52,6 @@ public final class OSProgressView: UIImageView {
                                                         attribute: .notAnAttribute,
                                                         multiplier: 1.0,
                                                         constant: frame.width * CGFloat(progress))
-        
         super.init(frame: frame);
         
         let leftConstraint = NSLayoutConstraint(item: progressBar,
