@@ -14,6 +14,14 @@
 		18060F871F42BED10049FC17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18060F811F42BED10049FC17 /* ViewController.swift */; };
 		18060F881F42BED10049FC17 /* OSProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18060F831F42BED10049FC17 /* OSProgressView.swift */; };
 		18060F891F42BED10049FC17 /* UINavigationController+OSProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18060F841F42BED10049FC17 /* UINavigationController+OSProgressBar.swift */; };
+		18060FA81F42C0FD0049FC17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18060FA71F42C0FD0049FC17 /* main.m */; };
+		18060FB11F42C0FD0049FC17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18060FAF1F42C0FD0049FC17 /* Main.storyboard */; };
+		18060FB31F42C0FD0049FC17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18060FB21F42C0FD0049FC17 /* Assets.xcassets */; };
+		18060FB61F42C0FD0049FC17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18060FB41F42C0FD0049FC17 /* LaunchScreen.storyboard */; };
+		18060FC11F42C1320049FC17 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18060FBD1F42C1320049FC17 /* AppDelegate.m */; };
+		18060FC21F42C1320049FC17 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18060FBF1F42C1320049FC17 /* ViewController.m */; };
+		18060FC51F42C1660049FC17 /* OSProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18060FC41F42C1660049FC17 /* OSProgressView.m */; };
+		18060FC81F42C1B80049FC17 /* UINavigationController+OSProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18060FC71F42C1B80049FC17 /* UINavigationController+OSProgressBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +34,31 @@
 		18060F811F42BED10049FC17 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		18060F831F42BED10049FC17 /* OSProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSProgressView.swift; sourceTree = "<group>"; };
 		18060F841F42BED10049FC17 /* UINavigationController+OSProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+OSProgressBar.swift"; sourceTree = "<group>"; };
+		18060FA41F42C0FC0049FC17 /* ProgressBarObjective-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ProgressBarObjective-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		18060FA71F42C0FD0049FC17 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		18060FB01F42C0FD0049FC17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18060FB21F42C0FD0049FC17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18060FB51F42C0FD0049FC17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		18060FB71F42C0FD0049FC17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18060FBC1F42C1320049FC17 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		18060FBD1F42C1320049FC17 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		18060FBE1F42C1320049FC17 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		18060FBF1F42C1320049FC17 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		18060FC31F42C1660049FC17 /* OSProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSProgressView.h; sourceTree = "<group>"; };
+		18060FC41F42C1660049FC17 /* OSProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSProgressView.m; sourceTree = "<group>"; };
+		18060FC61F42C1B80049FC17 /* UINavigationController+OSProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+OSProgressBar.h"; sourceTree = "<group>"; };
+		18060FC71F42C1B80049FC17 /* UINavigationController+OSProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+OSProgressBar.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		18060F691F42BE850049FC17 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18060FA11F42C0FC0049FC17 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				18060F6D1F42BE850049FC17 /* ProgessBarSwift */,
+				18060FA51F42C0FD0049FC17 /* ProgressBarObjective-C */,
 				18060EDB1F4295CC0049FC17 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				18060F6C1F42BE850049FC17 /* ProgessBarSwift.app */,
+				18060FA41F42C0FC0049FC17 /* ProgressBarObjective-C.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,6 +117,50 @@
 			path = ProgreeBar;
 			sourceTree = "<group>";
 		};
+		18060FA51F42C0FD0049FC17 /* ProgressBarObjective-C */ = {
+			isa = PBXGroup;
+			children = (
+				18060FBB1F42C1320049FC17 /* Demo */,
+				18060FC01F42C1320049FC17 /* ProgressBar */,
+				18060FA61F42C0FD0049FC17 /* Supporting Files */,
+			);
+			path = "ProgressBarObjective-C";
+			sourceTree = "<group>";
+		};
+		18060FA61F42C0FD0049FC17 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				18060FAF1F42C0FD0049FC17 /* Main.storyboard */,
+				18060FB21F42C0FD0049FC17 /* Assets.xcassets */,
+				18060FB41F42C0FD0049FC17 /* LaunchScreen.storyboard */,
+				18060FB71F42C0FD0049FC17 /* Info.plist */,
+				18060FA71F42C0FD0049FC17 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18060FBB1F42C1320049FC17 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				18060FBC1F42C1320049FC17 /* AppDelegate.h */,
+				18060FBD1F42C1320049FC17 /* AppDelegate.m */,
+				18060FBE1F42C1320049FC17 /* ViewController.h */,
+				18060FBF1F42C1320049FC17 /* ViewController.m */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		18060FC01F42C1320049FC17 /* ProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				18060FC31F42C1660049FC17 /* OSProgressView.h */,
+				18060FC41F42C1660049FC17 /* OSProgressView.m */,
+				18060FC61F42C1B80049FC17 /* UINavigationController+OSProgressBar.h */,
+				18060FC71F42C1B80049FC17 /* UINavigationController+OSProgressBar.m */,
+			);
+			path = ProgressBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +181,23 @@
 			productReference = 18060F6C1F42BE850049FC17 /* ProgessBarSwift.app */;
 			productType = "com.apple.product-type.application";
 		};
+		18060FA31F42C0FC0049FC17 /* ProgressBarObjective-C */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18060FB81F42C0FD0049FC17 /* Build configuration list for PBXNativeTarget "ProgressBarObjective-C" */;
+			buildPhases = (
+				18060FA01F42C0FC0049FC17 /* Sources */,
+				18060FA11F42C0FC0049FC17 /* Frameworks */,
+				18060FA21F42C0FC0049FC17 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ProgressBarObjective-C";
+			productName = "ProgressBarObjective-C";
+			productReference = 18060FA41F42C0FC0049FC17 /* ProgressBarObjective-C.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -117,6 +209,11 @@
 				ORGANIZATIONNAME = Ossey;
 				TargetAttributes = {
 					18060F6B1F42BE850049FC17 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = NKW67GFDHM;
+						ProvisioningStyle = Automatic;
+					};
+					18060FA31F42C0FC0049FC17 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = NKW67GFDHM;
 						ProvisioningStyle = Automatic;
@@ -137,6 +234,7 @@
 			projectRoot = "";
 			targets = (
 				18060F6B1F42BE850049FC17 /* ProgessBarSwift */,
+				18060FA31F42C0FC0049FC17 /* ProgressBarObjective-C */,
 			);
 		};
 /* End PBXProject section */
@@ -149,6 +247,16 @@
 				18060F861F42BED10049FC17 /* Main.storyboard in Resources */,
 				18060F791F42BE850049FC17 /* LaunchScreen.storyboard in Resources */,
 				18060F761F42BE850049FC17 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18060FA21F42C0FC0049FC17 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18060FB61F42C0FD0049FC17 /* LaunchScreen.storyboard in Resources */,
+				18060FB31F42C0FD0049FC17 /* Assets.xcassets in Resources */,
+				18060FB11F42C0FD0049FC17 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +274,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		18060FA01F42C0FC0049FC17 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18060FC81F42C1B80049FC17 /* UINavigationController+OSProgressBar.m in Sources */,
+				18060FC21F42C1320049FC17 /* ViewController.m in Sources */,
+				18060FC51F42C1660049FC17 /* OSProgressView.m in Sources */,
+				18060FC11F42C1320049FC17 /* AppDelegate.m in Sources */,
+				18060FA81F42C0FD0049FC17 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -176,6 +296,22 @@
 			);
 			name = LaunchScreen.storyboard;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		18060FAF1F42C0FD0049FC17 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18060FB01F42C0FD0049FC17 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		18060FB41F42C0FD0049FC17 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18060FB51F42C0FD0049FC17 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -300,6 +436,30 @@
 			};
 			name = Release;
 		};
+		18060FB91F42C0FD0049FC17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NKW67GFDHM;
+				INFOPLIST_FILE = "ProgressBarObjective-C/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ossey.ProgressBarObjective-C";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		18060FBA1F42C0FD0049FC17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NKW67GFDHM;
+				INFOPLIST_FILE = "ProgressBarObjective-C/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ossey.ProgressBarObjective-C";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -317,6 +477,14 @@
 			buildConfigurations = (
 				18060F7C1F42BE850049FC17 /* Debug */,
 				18060F7D1F42BE850049FC17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		18060FB81F42C0FD0049FC17 /* Build configuration list for PBXNativeTarget "ProgressBarObjective-C" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18060FB91F42C0FD0049FC17 /* Debug */,
+				18060FBA1F42C0FD0049FC17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
