@@ -7,69 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18060EE31F4295CC0049FC17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18060EE11F4295CC0049FC17 /* Main.storyboard */; };
-		18060EE51F4295CC0049FC17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18060EE41F4295CC0049FC17 /* Assets.xcassets */; };
-		18060EE81F4295CC0049FC17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18060EE61F4295CC0049FC17 /* LaunchScreen.storyboard */; };
-		18060EF31F4295CC0049FC17 /* ProgressBarDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18060EF21F4295CC0049FC17 /* ProgressBarDemoTests.swift */; };
-		18060EFE1F4295CC0049FC17 /* ProgressBarDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18060EFD1F4295CC0049FC17 /* ProgressBarDemoUITests.swift */; };
-		18060F181F42BA250049FC17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18060F161F42BA250049FC17 /* AppDelegate.swift */; };
-		18060F191F42BA250049FC17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18060F171F42BA250049FC17 /* ViewController.swift */; };
-		18060F1E1F42BA3A0049FC17 /* OSProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18060F1C1F42BA3A0049FC17 /* OSProgressView.swift */; };
-		18060F1F1F42BA3A0049FC17 /* UINavigationController+OSProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18060F1D1F42BA3A0049FC17 /* UINavigationController+OSProgressBar.swift */; };
+		18060F761F42BE850049FC17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18060F751F42BE850049FC17 /* Assets.xcassets */; };
+		18060F791F42BE850049FC17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18060F771F42BE850049FC17 /* LaunchScreen.storyboard */; };
+		18060F851F42BED10049FC17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18060F7F1F42BED10049FC17 /* AppDelegate.swift */; };
+		18060F861F42BED10049FC17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18060F801F42BED10049FC17 /* Main.storyboard */; };
+		18060F871F42BED10049FC17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18060F811F42BED10049FC17 /* ViewController.swift */; };
+		18060F881F42BED10049FC17 /* OSProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18060F831F42BED10049FC17 /* OSProgressView.swift */; };
+		18060F891F42BED10049FC17 /* UINavigationController+OSProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18060F841F42BED10049FC17 /* UINavigationController+OSProgressBar.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		18060EEF1F4295CC0049FC17 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 18060ED21F4295CC0049FC17 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 18060ED91F4295CC0049FC17;
-			remoteInfo = ProgressBarDemo;
-		};
-		18060EFA1F4295CC0049FC17 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 18060ED21F4295CC0049FC17 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 18060ED91F4295CC0049FC17;
-			remoteInfo = ProgressBarDemo;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		18060EDA1F4295CC0049FC17 /* ProgressBarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProgressBarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		18060EE21F4295CC0049FC17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		18060EE41F4295CC0049FC17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		18060EE71F4295CC0049FC17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		18060EE91F4295CC0049FC17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18060EEE1F4295CC0049FC17 /* ProgressBarDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressBarDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		18060EF21F4295CC0049FC17 /* ProgressBarDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarDemoTests.swift; sourceTree = "<group>"; };
-		18060EF41F4295CC0049FC17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18060EF91F4295CC0049FC17 /* ProgressBarDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressBarDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		18060EFD1F4295CC0049FC17 /* ProgressBarDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarDemoUITests.swift; sourceTree = "<group>"; };
-		18060EFF1F4295CC0049FC17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18060F151F42BA240049FC17 /* ProgressBarDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProgressBarDemo-Bridging-Header.h"; sourceTree = "<group>"; };
-		18060F161F42BA250049FC17 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18060F171F42BA250049FC17 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		18060F1C1F42BA3A0049FC17 /* OSProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSProgressView.swift; sourceTree = "<group>"; };
-		18060F1D1F42BA3A0049FC17 /* UINavigationController+OSProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+OSProgressBar.swift"; sourceTree = "<group>"; };
+		18060F6C1F42BE850049FC17 /* ProgessBarSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProgessBarSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18060F751F42BE850049FC17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
+		18060F781F42BE850049FC17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		18060F7A1F42BE850049FC17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		18060F7F1F42BED10049FC17 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		18060F801F42BED10049FC17 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		18060F811F42BED10049FC17 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		18060F831F42BED10049FC17 /* OSProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSProgressView.swift; sourceTree = "<group>"; };
+		18060F841F42BED10049FC17 /* UINavigationController+OSProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+OSProgressBar.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		18060ED71F4295CC0049FC17 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		18060EEB1F4295CC0049FC17 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		18060EF61F4295CC0049FC17 /* Frameworks */ = {
+		18060F691F42BE850049FC17 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -82,11 +42,7 @@
 		18060ED11F4295CC0049FC17 = {
 			isa = PBXGroup;
 			children = (
-				18060F1A1F42BA3A0049FC17 /* ProgressBarOC */,
-				18060F1B1F42BA3A0049FC17 /* ProgressBarSwift */,
-				18060EDC1F4295CC0049FC17 /* ProgressBarDemo */,
-				18060EF11F4295CC0049FC17 /* ProgressBarDemoTests */,
-				18060EFC1F4295CC0049FC17 /* ProgressBarDemoUITests */,
+				18060F6D1F42BE850049FC17 /* ProgessBarSwift */,
 				18060EDB1F4295CC0049FC17 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,116 +50,61 @@
 		18060EDB1F4295CC0049FC17 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				18060EDA1F4295CC0049FC17 /* ProgressBarDemo.app */,
-				18060EEE1F4295CC0049FC17 /* ProgressBarDemoTests.xctest */,
-				18060EF91F4295CC0049FC17 /* ProgressBarDemoUITests.xctest */,
+				18060F6C1F42BE850049FC17 /* ProgessBarSwift.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		18060EDC1F4295CC0049FC17 /* ProgressBarDemo */ = {
+		18060F6D1F42BE850049FC17 /* ProgessBarSwift */ = {
 			isa = PBXGroup;
 			children = (
-				18060F161F42BA250049FC17 /* AppDelegate.swift */,
-				18060F171F42BA250049FC17 /* ViewController.swift */,
-				18060EE11F4295CC0049FC17 /* Main.storyboard */,
-				18060EE41F4295CC0049FC17 /* Assets.xcassets */,
-				18060EE61F4295CC0049FC17 /* LaunchScreen.storyboard */,
-				18060EE91F4295CC0049FC17 /* Info.plist */,
-				18060F151F42BA240049FC17 /* ProgressBarDemo-Bridging-Header.h */,
+				18060F7E1F42BED10049FC17 /* Demo */,
+				18060F821F42BED10049FC17 /* ProgreeBar */,
 			);
-			path = ProgressBarDemo;
+			path = ProgessBarSwift;
 			sourceTree = "<group>";
 		};
-		18060EF11F4295CC0049FC17 /* ProgressBarDemoTests */ = {
+		18060F7E1F42BED10049FC17 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				18060EF21F4295CC0049FC17 /* ProgressBarDemoTests.swift */,
-				18060EF41F4295CC0049FC17 /* Info.plist */,
+				18060F751F42BE850049FC17 /* Assets.xcassets */,
+				18060F771F42BE850049FC17 /* LaunchScreen.storyboard */,
+				18060F7A1F42BE850049FC17 /* Info.plist */,
+				18060F7F1F42BED10049FC17 /* AppDelegate.swift */,
+				18060F801F42BED10049FC17 /* Main.storyboard */,
+				18060F811F42BED10049FC17 /* ViewController.swift */,
 			);
-			path = ProgressBarDemoTests;
+			path = Demo;
 			sourceTree = "<group>";
 		};
-		18060EFC1F4295CC0049FC17 /* ProgressBarDemoUITests */ = {
+		18060F821F42BED10049FC17 /* ProgreeBar */ = {
 			isa = PBXGroup;
 			children = (
-				18060EFD1F4295CC0049FC17 /* ProgressBarDemoUITests.swift */,
-				18060EFF1F4295CC0049FC17 /* Info.plist */,
+				18060F831F42BED10049FC17 /* OSProgressView.swift */,
+				18060F841F42BED10049FC17 /* UINavigationController+OSProgressBar.swift */,
 			);
-			path = ProgressBarDemoUITests;
-			sourceTree = "<group>";
-		};
-		18060F1A1F42BA3A0049FC17 /* ProgressBarOC */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ProgressBarOC;
-			sourceTree = "<group>";
-		};
-		18060F1B1F42BA3A0049FC17 /* ProgressBarSwift */ = {
-			isa = PBXGroup;
-			children = (
-				18060F1C1F42BA3A0049FC17 /* OSProgressView.swift */,
-				18060F1D1F42BA3A0049FC17 /* UINavigationController+OSProgressBar.swift */,
-			);
-			path = ProgressBarSwift;
+			path = ProgreeBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		18060ED91F4295CC0049FC17 /* ProgressBarDemo */ = {
+		18060F6B1F42BE850049FC17 /* ProgessBarSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 18060F021F4295CC0049FC17 /* Build configuration list for PBXNativeTarget "ProgressBarDemo" */;
+			buildConfigurationList = 18060F7B1F42BE850049FC17 /* Build configuration list for PBXNativeTarget "ProgessBarSwift" */;
 			buildPhases = (
-				18060ED61F4295CC0049FC17 /* Sources */,
-				18060ED71F4295CC0049FC17 /* Frameworks */,
-				18060ED81F4295CC0049FC17 /* Resources */,
+				18060F681F42BE850049FC17 /* Sources */,
+				18060F691F42BE850049FC17 /* Frameworks */,
+				18060F6A1F42BE850049FC17 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ProgressBarDemo;
-			productName = ProgressBarDemo;
-			productReference = 18060EDA1F4295CC0049FC17 /* ProgressBarDemo.app */;
+			name = ProgessBarSwift;
+			productName = ProgessBarSwift;
+			productReference = 18060F6C1F42BE850049FC17 /* ProgessBarSwift.app */;
 			productType = "com.apple.product-type.application";
-		};
-		18060EED1F4295CC0049FC17 /* ProgressBarDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 18060F051F4295CC0049FC17 /* Build configuration list for PBXNativeTarget "ProgressBarDemoTests" */;
-			buildPhases = (
-				18060EEA1F4295CC0049FC17 /* Sources */,
-				18060EEB1F4295CC0049FC17 /* Frameworks */,
-				18060EEC1F4295CC0049FC17 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				18060EF01F4295CC0049FC17 /* PBXTargetDependency */,
-			);
-			name = ProgressBarDemoTests;
-			productName = ProgressBarDemoTests;
-			productReference = 18060EEE1F4295CC0049FC17 /* ProgressBarDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		18060EF81F4295CC0049FC17 /* ProgressBarDemoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 18060F081F4295CC0049FC17 /* Build configuration list for PBXNativeTarget "ProgressBarDemoUITests" */;
-			buildPhases = (
-				18060EF51F4295CC0049FC17 /* Sources */,
-				18060EF61F4295CC0049FC17 /* Frameworks */,
-				18060EF71F4295CC0049FC17 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				18060EFB1F4295CC0049FC17 /* PBXTargetDependency */,
-			);
-			name = ProgressBarDemoUITests;
-			productName = ProgressBarDemoUITests;
-			productReference = 18060EF91F4295CC0049FC17 /* ProgressBarDemoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -215,23 +116,10 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Ossey;
 				TargetAttributes = {
-					18060ED91F4295CC0049FC17 = {
-						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = NKW67GFDHM;
-						LastSwiftMigration = 0830;
-						ProvisioningStyle = Automatic;
-					};
-					18060EED1F4295CC0049FC17 = {
+					18060F6B1F42BE850049FC17 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = NKW67GFDHM;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 18060ED91F4295CC0049FC17;
-					};
-					18060EF81F4295CC0049FC17 = {
-						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = NKW67GFDHM;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 18060ED91F4295CC0049FC17;
 					};
 				};
 			};
@@ -248,98 +136,46 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				18060ED91F4295CC0049FC17 /* ProgressBarDemo */,
-				18060EED1F4295CC0049FC17 /* ProgressBarDemoTests */,
-				18060EF81F4295CC0049FC17 /* ProgressBarDemoUITests */,
+				18060F6B1F42BE850049FC17 /* ProgessBarSwift */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		18060ED81F4295CC0049FC17 /* Resources */ = {
+		18060F6A1F42BE850049FC17 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18060EE81F4295CC0049FC17 /* LaunchScreen.storyboard in Resources */,
-				18060EE51F4295CC0049FC17 /* Assets.xcassets in Resources */,
-				18060EE31F4295CC0049FC17 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		18060EEC1F4295CC0049FC17 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		18060EF71F4295CC0049FC17 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				18060F861F42BED10049FC17 /* Main.storyboard in Resources */,
+				18060F791F42BE850049FC17 /* LaunchScreen.storyboard in Resources */,
+				18060F761F42BE850049FC17 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		18060ED61F4295CC0049FC17 /* Sources */ = {
+		18060F681F42BE850049FC17 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18060F1E1F42BA3A0049FC17 /* OSProgressView.swift in Sources */,
-				18060F191F42BA250049FC17 /* ViewController.swift in Sources */,
-				18060F1F1F42BA3A0049FC17 /* UINavigationController+OSProgressBar.swift in Sources */,
-				18060F181F42BA250049FC17 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		18060EEA1F4295CC0049FC17 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				18060EF31F4295CC0049FC17 /* ProgressBarDemoTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		18060EF51F4295CC0049FC17 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				18060EFE1F4295CC0049FC17 /* ProgressBarDemoUITests.swift in Sources */,
+				18060F881F42BED10049FC17 /* OSProgressView.swift in Sources */,
+				18060F871F42BED10049FC17 /* ViewController.swift in Sources */,
+				18060F891F42BED10049FC17 /* UINavigationController+OSProgressBar.swift in Sources */,
+				18060F851F42BED10049FC17 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		18060EF01F4295CC0049FC17 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 18060ED91F4295CC0049FC17 /* ProgressBarDemo */;
-			targetProxy = 18060EEF1F4295CC0049FC17 /* PBXContainerItemProxy */;
-		};
-		18060EFB1F4295CC0049FC17 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 18060ED91F4295CC0049FC17 /* ProgressBarDemo */;
-			targetProxy = 18060EFA1F4295CC0049FC17 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		18060EE11F4295CC0049FC17 /* Main.storyboard */ = {
+		18060F771F42BE850049FC17 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				18060EE21F4295CC0049FC17 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		18060EE61F4295CC0049FC17 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				18060EE71F4295CC0049FC17 /* Base */,
+				18060F781F42BE850049FC17 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -438,96 +274,29 @@
 			};
 			name = Release;
 		};
-		18060F031F4295CC0049FC17 /* Debug */ = {
+		18060F7C1F42BE850049FC17 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = NKW67GFDHM;
-				INFOPLIST_FILE = ProgressBarDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				INFOPLIST_FILE = ProgessBarSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ossey.ProgressBarDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ossey.ProgessBarSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ProgressBarDemo/ProgressBarDemo-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		18060F041F4295CC0049FC17 /* Release */ = {
+		18060F7D1F42BE850049FC17 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = NKW67GFDHM;
-				INFOPLIST_FILE = ProgressBarDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				INFOPLIST_FILE = ProgessBarSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ossey.ProgressBarDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ProgressBarDemo/ProgressBarDemo-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		18060F061F4295CC0049FC17 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = NKW67GFDHM;
-				INFOPLIST_FILE = ProgressBarDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ossey.ProgressBarDemoTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ossey.ProgessBarSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProgressBarDemo.app/ProgressBarDemo";
-			};
-			name = Debug;
-		};
-		18060F071F4295CC0049FC17 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = NKW67GFDHM;
-				INFOPLIST_FILE = ProgressBarDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ossey.ProgressBarDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProgressBarDemo.app/ProgressBarDemo";
-			};
-			name = Release;
-		};
-		18060F091F4295CC0049FC17 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = NKW67GFDHM;
-				INFOPLIST_FILE = ProgressBarDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ossey.ProgressBarDemoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = ProgressBarDemo;
-			};
-			name = Debug;
-		};
-		18060F0A1F4295CC0049FC17 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = NKW67GFDHM;
-				INFOPLIST_FILE = ProgressBarDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ossey.ProgressBarDemoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = ProgressBarDemo;
 			};
 			name = Release;
 		};
@@ -543,32 +312,13 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		18060F021F4295CC0049FC17 /* Build configuration list for PBXNativeTarget "ProgressBarDemo" */ = {
+		18060F7B1F42BE850049FC17 /* Build configuration list for PBXNativeTarget "ProgessBarSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				18060F031F4295CC0049FC17 /* Debug */,
-				18060F041F4295CC0049FC17 /* Release */,
+				18060F7C1F42BE850049FC17 /* Debug */,
+				18060F7D1F42BE850049FC17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		18060F051F4295CC0049FC17 /* Build configuration list for PBXNativeTarget "ProgressBarDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				18060F061F4295CC0049FC17 /* Debug */,
-				18060F071F4295CC0049FC17 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		18060F081F4295CC0049FC17 /* Build configuration list for PBXNativeTarget "ProgressBarDemoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				18060F091F4295CC0049FC17 /* Debug */,
-				18060F0A1F4295CC0049FC17 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
