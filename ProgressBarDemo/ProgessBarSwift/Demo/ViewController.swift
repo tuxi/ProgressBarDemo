@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        navigationController?.progressView.progressHeight = 2
+        navigationController!.progressView.progressHeight = 2
         navigationController!.progressView.trackTintColor = UIColor.clear
         navigationController!.progressView.progressTintColor = UIColor.blue
         

@@ -138,7 +138,7 @@ public final class OSProgressView: UIImageView {
         setProgress(progress: 0.0, animated: true)
         
         UIView.animate(withDuration: 0.25, animations: { 
-            self.alpha = 0.0
+            self.progressBar.alpha = 0.0
         }) { (finished: Bool) in
             if let cancellationHandler = self.cancellationHandler {
                 cancellationHandler()
