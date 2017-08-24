@@ -12,7 +12,6 @@ class ViewController: UIViewController {
     
     private var timer: Timer?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -49,6 +48,9 @@ class ViewController: UIViewController {
             i += 1
         }
         
+        /**
+         call back for progress
+         */
         navigationController?.progressView.cancellationHandler = {
             print("cancellationHandler")
         }
