@@ -210,7 +210,7 @@
 				TargetAttributes = {
 					18060F6B1F42BE850049FC17 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = H3Q63DY2LV;
+						DevelopmentTeam = NKW67GFDHM;
 						ProvisioningStyle = Automatic;
 					};
 					18060FA31F42C0FC0049FC17 = {
@@ -414,8 +414,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = H3Q63DY2LV;
+				DEVELOPMENT_TEAM = NKW67GFDHM;
 				INFOPLIST_FILE = ProgessBarSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ossey.ProgessBarSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -427,8 +428,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = H3Q63DY2LV;
+				DEVELOPMENT_TEAM = NKW67GFDHM;
 				INFOPLIST_FILE = ProgessBarSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ossey.ProgessBarSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -442,6 +444,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = H3Q63DY2LV;
 				INFOPLIST_FILE = "ProgressBarObjective-C/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ossey.ProgressBarObjective-C";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -454,6 +457,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = H3Q63DY2LV;
 				INFOPLIST_FILE = "ProgressBarObjective-C/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ossey.ProgressBarObjective-C";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -479,6 +483,7 @@
 				18060F7D1F42BE850049FC17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18060FB81F42C0FD0049FC17 /* Build configuration list for PBXNativeTarget "ProgressBarObjective-C" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +492,7 @@
 				18060FBA1F42C0FD0049FC17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
