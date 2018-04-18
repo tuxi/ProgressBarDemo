@@ -8,122 +8,68 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ExampleItem: NSObject {
+    var title: String?
+    var exampleClass: AnyClass?
     
-    private var timer: Timer?
+    convenience init(exampleClass: AnyClass, title: String) {
+        self.init()
+        self.exampleClass = exampleClass
+        self.title = title
+    }
+}
+
+class ViewController: UITableViewController {
+    
+    internal var items: [ExampleItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        navigationController!.progressView.progressHeight = 2
-        navigationController!.progressView.trackTintColor = UIColor.clear
-        navigationController!.progressView.progressTintColor = UIColor.blue
         
-        var i: NSInteger = 0
-        let btnTitleArray = ["update progress", "finish progress", "cancel progress", "auto update progress"]
-        let centerYConstantArray = [NSNumber.init(value: -50.0), NSNumber.init(value: 0.0), NSNumber.init(value: 50.0), NSNumber.init(value: 100)]
+        let item1 = ExampleItem(exampleClass: ExampleProgressViewController.classForCoder(), title: "progress")
+        self.items.append(item1)
         
-        while i < 4 {
-            let btn: UIButton = UIButton(type: .system)
-            btn.translatesAutoresizingMaskIntoConstraints = false
-            let centerX = NSLayoutConstraint(item: btn,
-                                             attribute: .centerX,
-                                             relatedBy: .equal,
-                                             toItem: view,
-                                             attribute: .centerX,
-                                             multiplier: 1.0,
-                                             constant: 0.0)
-            let centerY = NSLayoutConstraint(item: btn,
-                                             attribute: .centerY,
-                                             relatedBy: .equal,
-                                             toItem: view,
-                                             attribute: .centerY,
-                                             multiplier: 1.0,
-                                             constant: CGFloat(centerYConstantArray[i].floatValue))
-            btn.setTitle(btnTitleArray[i], for: .normal)
-            btn.addTarget(self, action: #selector(ViewController.updateProgress(_:)), for: .touchUpInside)
-            view.addSubview(btn)
-            btn.tag = i + 100
-            view.addConstraints([centerX, centerY])
-            i += 1
-        }
-        
-        /**
-         call back for progress
-         */
-        navigationController?.progressView.cancellationHandler = {
-            print("cancellationHandler")
-        }
-        
-        navigationController?.progressView.completionHandler = {
-            print("completionHandler")
-        }
-        
-        navigationController?.progressView.progressHandler = { (progress: CGFloat) in
-            print(progress)
-        }
+        let item2 = ExampleItem(exampleClass: ExampleLoadingViewController.classForCoder(), title: "loading")
+        self.items.append(item2)
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.items.count
     }
-
-    @objc private func updateProgress(_ sender: UIButton) {
-        
-        let idx = sender.tag - 100
-        
-        switch idx {
-        case 0:
-            let progress = navigationController!.progressView.progress
-            navigationController!.progressView.setProgress(progress: CGFloat(progress+0.1), animated: true)
-         break
-        case 1:
-            navigationController!.progressView.completed()
-            invalidateTimer()
-            break
-        case 2:
-            navigationController!.progressView.cancel()
-            invalidateTimer()
-            break
-        default:
-            autoUpdateProgress()
-         break
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        if cell == nil {
+            cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        }
+        let example = self.items[indexPath.row]
+        cell?.textLabel?.text = example.title
+        return cell!
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let example = self.items[indexPath.row]
+        if let exampleClass = example.exampleClass, let title = example.title {
+            // 动态获取命名空间,开发中应该充分利用guard语句，guard可以有效的解决可选绑定容易形成{}嵌套问题
+//            guard   let name = Bundle.main.infoDictionary!["CFBundleExecutable"] as? String else {
+//                return
+//            }
+            // 根据字符串获取Class
+//            let controllerName = NSStringFromClass(exampleClass)
+//            let cls: AnyClass? = NSClassFromString(name + "." + controllerName)
             
+            // Swift中如果想通过一个Class来创建一个对象, 必须告诉系统这个Class的确切类型，这里注意：所有的视图控制器都是继承于UIViewController
+            guard let typeClass = exampleClass as? UIViewController.Type else {
+                return
+            }
+            // 通过Class创建对象
+            let childController = typeClass.init()
+            
+            // 设置控制器相关属性
+            childController.title = title
+            self.navigationController?.pushViewController(childController, animated: true)
         }
-        
-    }
-
-    @objc private func autoUpdateProgress() {
-        
-        if timer == nil {
-            timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(autoUpdateProgress), userInfo: nil, repeats: true)
-            return;
-        }
-        
-        var progress = navigationController!.progressView.progress
-        if progress >= 1 {
-            progress = 0.0
-        }
-        progress += 0.05
-        navigationController!.progressView.setProgress(progress: CGFloat(progress), animated: true)
-        if progress >= 1.0 {
-            invalidateTimer()
-        }
-        
-    }
-    
-    private func invalidateTimer() {
-        if timer == nil {
-            return
-        }
-        timer?.invalidate()
-        timer = nil
-    }
-    
-    deinit {
-        invalidateTimer()
     }
     
 }

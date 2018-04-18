@@ -22,6 +22,8 @@
 		18060FC21F42C1320049FC17 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18060FBF1F42C1320049FC17 /* ViewController.m */; };
 		18060FC51F42C1660049FC17 /* OSProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18060FC41F42C1660049FC17 /* OSProgressView.m */; };
 		18060FC81F42C1B80049FC17 /* UINavigationController+OSProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18060FC71F42C1B80049FC17 /* UINavigationController+OSProgressBar.m */; };
+		D2371DB6208783E200588BEC /* ExampleProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2371DB5208783E200588BEC /* ExampleProgressViewController.swift */; };
+		D2371DB820878AC700588BEC /* ExampleLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2371DB720878AC700588BEC /* ExampleLoadingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		18060FC41F42C1660049FC17 /* OSProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSProgressView.m; sourceTree = "<group>"; };
 		18060FC61F42C1B80049FC17 /* UINavigationController+OSProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+OSProgressBar.h"; sourceTree = "<group>"; };
 		18060FC71F42C1B80049FC17 /* UINavigationController+OSProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+OSProgressBar.m"; sourceTree = "<group>"; };
+		D2371DB5208783E200588BEC /* ExampleProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleProgressViewController.swift; sourceTree = "<group>"; };
+		D2371DB720878AC700588BEC /* ExampleLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleLoadingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				18060F7A1F42BE850049FC17 /* Info.plist */,
 				18060F7F1F42BED10049FC17 /* AppDelegate.swift */,
 				18060F801F42BED10049FC17 /* Main.storyboard */,
+				D2371DB5208783E200588BEC /* ExampleProgressViewController.swift */,
+				D2371DB720878AC700588BEC /* ExampleLoadingViewController.swift */,
 				18060F811F42BED10049FC17 /* ViewController.swift */,
 			);
 			path = Demo;
@@ -271,6 +277,8 @@
 				18060F871F42BED10049FC17 /* ViewController.swift in Sources */,
 				18060F891F42BED10049FC17 /* UINavigationController+OSProgressBar.swift in Sources */,
 				18060F851F42BED10049FC17 /* AppDelegate.swift in Sources */,
+				D2371DB820878AC700588BEC /* ExampleLoadingViewController.swift in Sources */,
+				D2371DB6208783E200588BEC /* ExampleProgressViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
