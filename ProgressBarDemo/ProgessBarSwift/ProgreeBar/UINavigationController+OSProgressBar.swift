@@ -34,6 +34,14 @@ public extension UINavigationController {
         
         return progressView
     }
-   
+    public var progressHeight: CGFloat {
+        get {
+            return progressView.frame.height
+        }
+        set {
+            progressView.frame.origin.y = progressView.superview!.frame.height - newValue
+            progressView.frame.size.height = newValue
+        }
+    }
    
 }

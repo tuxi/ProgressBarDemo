@@ -9,7 +9,6 @@
 import UIKit
 
 public final class OSProgressView: UIImageView {
-    private var timer: Timer?
     internal var progress: CGFloat = 0 {
         didSet {
             progress = min(1.0, progress)
@@ -27,6 +26,8 @@ public final class OSProgressView: UIImageView {
     }
     
     internal let progressBar = UIImageView()
+    fileprivate var needsLoading: Bool = false
+    fileprivate var isLoading: Bool = false
     
     fileprivate let progressBarWidthConstraint : NSLayoutConstraint
     // loading时 使用centerX
@@ -46,7 +47,20 @@ public final class OSProgressView: UIImageView {
         }
     }
     
-    @objc fileprivate func loadingAnimation() {
+    @objc public dynamic var loadingTintColor : UIColor? = UIColor.white {
+        didSet {
+            progressBar.backgroundColor = loadingTintColor
+        }
+    }
+    
+    @objc fileprivate func loadingAnimation(duration : TimeInterval = 0.55) {
+        if needsLoading == false {
+            return
+        }
+        if isLoading == true {
+            return
+        }
+        isLoading = true
         var needLayout = false
         if self.progressBarLeftConstraint?.isActive == true {
             self.progressBarLeftConstraint?.isActive = false
@@ -61,13 +75,18 @@ public final class OSProgressView: UIImageView {
         }
         
         progressBar.alpha = 1.0
-        let duration : TimeInterval = 0.55
         progressBarWidthConstraint.constant = bounds.width * CGFloat(1.0)
-        UIView.animate(withDuration: duration, animations: {
+        UIView.animate(withDuration: duration-0.1, animations: {
             self.layoutIfNeeded()
         }) { (finished) in
-            self.progressBar.alpha = 0.0
             self.progressBarWidthConstraint.constant = 0.0
+            self.progressBar.alpha = 0.0
+            UIView.animate(withDuration: 0.1, animations: {
+                self.layoutIfNeeded()
+            }, completion: { (finished) in
+                self.isLoading = false
+                self.loadingAnimation(duration: duration)
+            })
         }
     }
     
@@ -139,6 +158,7 @@ public final class OSProgressView: UIImageView {
     }
     
     internal func setProgress(progress: CGFloat, animated: Bool) {
+        self.endLoading()   
         progressBar.alpha = 1.0
         let duration : TimeInterval = animated ? 0.1 : 0.0
         
@@ -177,37 +197,17 @@ public final class OSProgressView: UIImageView {
             }
         }
     }
-    
-    public var progressHeight: CGFloat {
-        get {
-            return frame.height
-        }
-        set {
-            frame.origin.y = superview!.frame.height - newValue
-            frame.size.height = newValue
-        }
-    }
 
-    public func startLoading(duration: TimeInterval = 0.25) {
-        if timer == nil {
-            self.timer = Timer(timeInterval: duration, target: self, selector: #selector(OSProgressView.loadingAnimation), userInfo: nil, repeats: true)
-            RunLoop.current.add(self.timer!, forMode: RunLoopMode.commonModes)
-            self.timer?.fire()
-        }
+    public func startLoading(duration: TimeInterval = 0.45) {
+        self.needsLoading = true
+        loadingAnimation(duration: duration)
     }
     
     public func endLoading() {
+        self.needsLoading = false
         self.progressBarCenterXConstraint?.isActive = false
         self.progressBarLeftConstraint?.isActive = true
         self.layoutIfNeeded()
-        invalidateTimer()
     }
-    
-    private func invalidateTimer() {
-        if timer == nil {
-            return
-        }
-        timer?.invalidate()
-        timer = nil
-    }
+
 }

@@ -16,7 +16,7 @@ class ExampleProgressViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.view.backgroundColor = UIColor.white
-        navigationController!.progressView.progressHeight = 2
+        navigationController!.progressHeight = 2
         navigationController!.progressView.trackTintColor = UIColor.clear
         navigationController!.progressView.progressTintColor = UIColor.blue
         
@@ -93,7 +93,7 @@ class ExampleProgressViewController: UIViewController {
             invalidateTimer()
             break
         default:
-            autoUpdateProgress()
+            startLoading()
             break
             
         }
@@ -102,10 +102,6 @@ class ExampleProgressViewController: UIViewController {
     
     @objc private func autoUpdateProgress() {
         
-        if timer == nil {
-            timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(autoUpdateProgress), userInfo: nil, repeats: true)
-            return;
-        }
         guard let navigationController = navigationController else {
             return
         }
@@ -119,6 +115,13 @@ class ExampleProgressViewController: UIViewController {
             invalidateTimer()
         }
         
+    }
+    
+    private func startLoading() {
+        if timer == nil {
+            timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(autoUpdateProgress), userInfo: nil, repeats: true)
+            return;
+        }
     }
     
     private func invalidateTimer() {
