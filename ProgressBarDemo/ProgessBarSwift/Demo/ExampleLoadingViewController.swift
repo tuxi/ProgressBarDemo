@@ -9,9 +9,7 @@
 import UIKit
 
 class ExampleLoadingViewController: UIViewController {
-
-    private var timer: Timer?
-    
+    static let BaseTag: Int = 100
     public lazy var progressView: OSProgressView = {
         
         let defaultHeight = CGFloat(0.5)
@@ -57,22 +55,11 @@ class ExampleLoadingViewController: UIViewController {
                                              multiplier: 1.0,
                                              constant: CGFloat(centerYConstantArray[i].floatValue))
             btn.setTitle(btnTitleArray[i], for: .normal)
-            btn.addTarget(self, action: #selector(ExampleLoadingViewController.startLoading), for: .touchUpInside)
+            btn.addTarget(self, action: #selector(ExampleLoadingViewController.toggleLoading), for: .touchUpInside)
             view.addSubview(btn)
-            btn.tag = i + 100
+            btn.tag = i + ExampleLoadingViewController.BaseTag
             view.addConstraints([centerX, centerY])
             i += 1
-        }
-        
-        /**
-         call back for progress
-         */
-        progressView.cancellationHandler = {
-            print("cancellationHandler")
-        }
-        
-        progressView.completionHandler = {
-            print("completionHandler")
         }
         
         progressView.progressHandler = { (progress: CGFloat) in
@@ -83,27 +70,16 @@ class ExampleLoadingViewController: UIViewController {
         
     }
     
-
-    private func invalidateTimer() {
-        if timer == nil {
-            return
-        }
-        timer?.invalidate()
-        timer = nil
-    }
-    
     deinit {
-        invalidateTimer()
+        progressView.endLoading()
     }
     
-    @objc fileprivate func loading() {
-        progressView.completed()
-    }
-    
-    @objc fileprivate func startLoading() {
-        if timer == nil {
-            timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(loading), userInfo: nil, repeats: true)
-            return;
+    @objc fileprivate func toggleLoading(sender: UIButton) {
+        if sender.tag == ExampleLoadingViewController.BaseTag {
+            progressView.startLoading()
+        }
+        else {
+            progressView.endLoading()
         }
     }
 

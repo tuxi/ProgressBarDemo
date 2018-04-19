@@ -9,7 +9,7 @@
 import UIKit
 
 public final class OSProgressView: UIImageView {
-
+    private var timer: Timer?
     internal var progress: CGFloat = 0 {
         didSet {
             progress = min(1.0, progress)
@@ -39,6 +39,22 @@ public final class OSProgressView: UIImageView {
     @objc public dynamic var progressTintColor : UIColor? = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1) {
         didSet {
             progressBar.backgroundColor = progressTintColor
+        }
+    }
+    
+    @objc fileprivate func loading() {
+        progressBar.alpha = 1.0
+        let duration : TimeInterval = 0.1
+        progressBarWidthConstraint.constant = bounds.width * CGFloat(1.0)
+        UIView.animate(withDuration: duration, animations: {
+            self.layoutIfNeeded()
+        }) { (finished) in
+            self.progressBar.alpha = 0.0
+            UIView.animate(withDuration: 0.25, animations: {
+                self.layoutIfNeeded()
+            }) { (finished: Bool) in
+                self.progressBarWidthConstraint.constant = 0.0
+            }
         }
     }
     
@@ -156,4 +172,22 @@ public final class OSProgressView: UIImageView {
         }
     }
 
+    public func startLoading() {
+        if timer == nil {
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(loading), userInfo: nil, repeats: true)
+            return;
+        }
+    }
+    
+    public func endLoading() {
+        invalidateTimer()
+    }
+    
+    private func invalidateTimer() {
+        if timer == nil {
+            return
+        }
+        timer?.invalidate()
+        timer = nil
+    }
 }
