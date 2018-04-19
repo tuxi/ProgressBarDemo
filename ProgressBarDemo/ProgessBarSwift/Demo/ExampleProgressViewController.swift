@@ -24,7 +24,7 @@ class ExampleProgressViewController: UIViewController {
         let btnTitleArray = ["update progress", "finish progress", "cancel progress", "auto update progress"]
         let centerYConstantArray = [NSNumber.init(value: -50.0), NSNumber.init(value: 0.0), NSNumber.init(value: 50.0), NSNumber.init(value: 100)]
         
-        while i < 4 {
+        while i < btnTitleArray.count {
             let btn: UIButton = UIButton(type: .system)
             btn.translatesAutoresizingMaskIntoConstraints = false
             let centerX = NSLayoutConstraint(item: btn,

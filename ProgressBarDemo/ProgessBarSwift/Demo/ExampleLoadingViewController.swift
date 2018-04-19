@@ -12,15 +12,29 @@ class ExampleLoadingViewController: UIViewController {
 
     private var timer: Timer?
     
+    public lazy var progressView: OSProgressView = {
+        
+        let defaultHeight = CGFloat(0.5)
+        
+        let frame = CGRect(x: 0,
+                           y: 100,
+                           width: 200.0,
+                           height: defaultHeight)
+        
+        let progressView = OSProgressView(frame: frame)
+        progressView.autoresizingMask = [
+            .flexibleWidth, .flexibleTopMargin
+        ]
+        
+        return progressView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.navigationController?.navigationBar.backgroundImage(for: .compact)
-        self.view.backgroundColor = UIColor.black
-        navigationController!.progressView.progressHeight = 0.5
-        navigationController!.progressView.trackTintColor = UIColor.white
-        navigationController!.progressView.progressTintColor = UIColor.blue
-        
+        self.view.backgroundColor = UIColor.clear
+        self.view.addSubview(progressView)
+        progressView.trackTintColor = UIColor.black
+        progressView.progressTintColor = UIColor.white
         var i: NSInteger = 0
         let btnTitleArray = ["start loading", "end loading"]
         let centerYConstantArray = [NSNumber.init(value: -50.0), NSNumber.init(value: 0.0), NSNumber.init(value: 50.0), NSNumber.init(value: 100)]
@@ -53,22 +67,44 @@ class ExampleLoadingViewController: UIViewController {
         /**
          call back for progress
          */
-        navigationController?.progressView.cancellationHandler = {
+        progressView.cancellationHandler = {
             print("cancellationHandler")
         }
         
-        navigationController?.progressView.completionHandler = {
+        progressView.completionHandler = {
             print("completionHandler")
         }
         
-        navigationController?.progressView.progressHandler = { (progress: CGFloat) in
+        progressView.progressHandler = { (progress: CGFloat) in
             print(progress)
         }
         
+        
+        
+    }
+    
+
+    private func invalidateTimer() {
+        if timer == nil {
+            return
+        }
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    deinit {
+        invalidateTimer()
+    }
+    
+    @objc fileprivate func loading() {
+        progressView.completed()
     }
     
     @objc fileprivate func startLoading() {
-        
+        if timer == nil {
+            timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(loading), userInfo: nil, repeats: true)
+            return;
+        }
     }
 
 }
