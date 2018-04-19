@@ -16,7 +16,7 @@ class ExampleLoadingViewController: UIViewController {
         
         let frame = CGRect(x: 0,
                            y: 100,
-                           width: 200.0,
+                           width: self.view.frame.width,
                            height: defaultHeight)
         
         let progressView = OSProgressView(frame: frame)

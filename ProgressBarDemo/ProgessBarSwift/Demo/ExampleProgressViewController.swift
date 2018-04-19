@@ -106,13 +106,15 @@ class ExampleProgressViewController: UIViewController {
             timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(autoUpdateProgress), userInfo: nil, repeats: true)
             return;
         }
-        
-        var progress = navigationController!.progressView.progress
+        guard let navigationController = navigationController else {
+            return
+        }
+        var progress = navigationController.progressView.progress
         if progress >= 1 {
             progress = 0.0
         }
         progress += 0.05
-        navigationController!.progressView.setProgress(progress: CGFloat(progress), animated: true)
+        navigationController.progressView.setProgress(progress: CGFloat(progress), animated: true)
         if progress >= 1.0 {
             invalidateTimer()
         }

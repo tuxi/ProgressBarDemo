@@ -61,17 +61,13 @@ public final class OSProgressView: UIImageView {
         }
         
         progressBar.alpha = 1.0
-        let duration : TimeInterval = 0.1
+        let duration : TimeInterval = 0.55
         progressBarWidthConstraint.constant = bounds.width * CGFloat(1.0)
         UIView.animate(withDuration: duration, animations: {
             self.layoutIfNeeded()
         }) { (finished) in
             self.progressBar.alpha = 0.0
-            UIView.animate(withDuration: 0.25, animations: {
-                self.layoutIfNeeded()
-            }) { (finished: Bool) in
-                self.progressBarWidthConstraint.constant = 0.0
-            }
+            self.progressBarWidthConstraint.constant = 0.0
         }
     }
     
@@ -192,7 +188,7 @@ public final class OSProgressView: UIImageView {
         }
     }
 
-    public func startLoading(duration: TimeInterval = 0.5) {
+    public func startLoading(duration: TimeInterval = 0.25) {
         if timer == nil {
             self.timer = Timer(timeInterval: duration, target: self, selector: #selector(OSProgressView.loadingAnimation), userInfo: nil, repeats: true)
             RunLoop.current.add(self.timer!, forMode: RunLoopMode.commonModes)
