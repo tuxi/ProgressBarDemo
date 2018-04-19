@@ -29,6 +29,10 @@ public final class OSProgressView: UIImageView {
     internal let progressBar = UIImageView()
     
     fileprivate let progressBarWidthConstraint : NSLayoutConstraint
+    // loading时 使用centerX
+    fileprivate var progressBarCenterXConstraint : NSLayoutConstraint?
+    // progress时 使用left
+    fileprivate var progressBarLeftConstraint : NSLayoutConstraint?
     
     @objc public dynamic var trackTintColor : UIColor? = .clear {
         didSet {
@@ -42,7 +46,13 @@ public final class OSProgressView: UIImageView {
         }
     }
     
-    @objc fileprivate func loading() {
+    @objc fileprivate func loadingAnimation() {
+        if self.progressBarLeftConstraint?.isActive == true {
+            self.progressBarLeftConstraint?.isActive = false
+        }
+        if self.progressBarCenterXConstraint?.isActive == false {
+            self.progressBarCenterXConstraint?.isActive = true
+        }
         progressBar.alpha = 1.0
         let duration : TimeInterval = 0.1
         progressBarWidthConstraint.constant = bounds.width * CGFloat(1.0)
@@ -77,9 +87,12 @@ public final class OSProgressView: UIImageView {
                                                         attribute: .notAnAttribute,
                                                         multiplier: 1.0,
                                                         constant: frame.width * CGFloat(progress))
+        
         super.init(frame: frame);
         
-        let leftConstraint = NSLayoutConstraint(item: progressBar,
+        progressBarCenterXConstraint = NSLayoutConstraint(item: progressBar, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0.0)
+        
+        progressBarLeftConstraint = NSLayoutConstraint(item: progressBar,
                                                 attribute: .left,
                                                 relatedBy: .equal,
                                                 toItem: self,
@@ -111,7 +124,7 @@ public final class OSProgressView: UIImageView {
         
         addConstraints([
             progressBarWidthConstraint,
-            leftConstraint,
+            progressBarLeftConstraint!,
             bottomConstraint,
             topConstraint
             ])
@@ -174,12 +187,18 @@ public final class OSProgressView: UIImageView {
 
     public func startLoading() {
         if timer == nil {
-            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(loading), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(loadingAnimation), userInfo: nil, repeats: true)
             return;
         }
     }
     
     public func endLoading() {
+        if self.progressBarLeftConstraint?.isActive == false {
+            self.progressBarLeftConstraint?.isActive = true
+        }
+        if self.progressBarCenterXConstraint?.isActive == true {
+            self.progressBarCenterXConstraint?.isActive = false
+        }
         invalidateTimer()
     }
     
