@@ -9,7 +9,7 @@
 import UIKit
 
 public final class OSProgressView: UIImageView {
-    internal var progress: CGFloat = 0 {
+    public var progress: CGFloat = 0 {
         didSet {
             progress = min(1.0, progress)
             progressBarWidthConstraint.constant = bounds.width * CGFloat(progress)
@@ -96,6 +96,12 @@ public final class OSProgressView: UIImageView {
             progress = tempProgress
         }
     }
+    
+    public override func layoutSubviews() {
+        superview?.layoutSubviews()
+//        progress = min(1.0, progress)
+//        progressBarWidthConstraint.constant = bounds.width * CGFloat(progress)
+    }
 
     /* ====================================================================== */
     // MARK: - initializer
@@ -157,8 +163,12 @@ public final class OSProgressView: UIImageView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    internal func setProgress(progress: CGFloat, animated: Bool) {
-        self.endLoading()   
+    public func setProgress(progress: CGFloat, animated: Bool) {
+        self.endLoading()
+        if self.isLoading {
+            // 防止最后一次loading还未结束，就开始执行progress，导致布局问题
+            return
+        }
         progressBar.alpha = 1.0
         let duration : TimeInterval = animated ? 0.1 : 0.0
         
