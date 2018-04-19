@@ -47,12 +47,19 @@ public final class OSProgressView: UIImageView {
     }
     
     @objc fileprivate func loadingAnimation() {
+        var needLayout = false
         if self.progressBarLeftConstraint?.isActive == true {
             self.progressBarLeftConstraint?.isActive = false
+            needLayout = true
         }
         if self.progressBarCenterXConstraint?.isActive == false {
             self.progressBarCenterXConstraint?.isActive = true
+            needLayout = true
         }
+        if needLayout == true {
+            self.layoutIfNeeded()
+        }
+        
         progressBar.alpha = 1.0
         let duration : TimeInterval = 0.1
         progressBarWidthConstraint.constant = bounds.width * CGFloat(1.0)
@@ -185,20 +192,18 @@ public final class OSProgressView: UIImageView {
         }
     }
 
-    public func startLoading() {
+    public func startLoading(duration: TimeInterval = 0.5) {
         if timer == nil {
-            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(loadingAnimation), userInfo: nil, repeats: true)
-            return;
+            self.timer = Timer(timeInterval: duration, target: self, selector: #selector(OSProgressView.loadingAnimation), userInfo: nil, repeats: true)
+            RunLoop.current.add(self.timer!, forMode: RunLoopMode.commonModes)
+            self.timer?.fire()
         }
     }
     
     public func endLoading() {
-        if self.progressBarLeftConstraint?.isActive == false {
-            self.progressBarLeftConstraint?.isActive = true
-        }
-        if self.progressBarCenterXConstraint?.isActive == true {
-            self.progressBarCenterXConstraint?.isActive = false
-        }
+        self.progressBarCenterXConstraint?.isActive = false
+        self.progressBarLeftConstraint?.isActive = true
+        self.layoutIfNeeded()
         invalidateTimer()
     }
     

@@ -29,7 +29,7 @@ class ExampleLoadingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.clear
+        self.view.backgroundColor = UIColor.black
         self.view.addSubview(progressView)
         progressView.trackTintColor = UIColor.black
         progressView.progressTintColor = UIColor.white
