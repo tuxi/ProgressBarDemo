@@ -10,7 +10,7 @@ import UIKit
 
 public extension UINavigationController {
     
-    public var progressView: OSProgressView {
+    var progressView: OSProgressView {
         for subview in navigationBar.subviews {
             if let progressView = subview as? OSProgressView {
                 return progressView
@@ -34,7 +34,7 @@ public extension UINavigationController {
         
         return progressView
     }
-    public var progressHeight: CGFloat {
+    var progressHeight: CGFloat {
         get {
             return progressView.frame.height
         }
