@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0778B4A223ADBFD00091BAD8 /* GradientProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0778B4A123ADBFD00091BAD8 /* GradientProgressView.swift */; };
 		18060F761F42BE850049FC17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18060F751F42BE850049FC17 /* Assets.xcassets */; };
 		18060F791F42BE850049FC17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18060F771F42BE850049FC17 /* LaunchScreen.storyboard */; };
 		18060F851F42BED10049FC17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18060F7F1F42BED10049FC17 /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0778B4A123ADBFD00091BAD8 /* GradientProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientProgressView.swift; sourceTree = "<group>"; };
 		18060F6C1F42BE850049FC17 /* ProgessBarSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProgessBarSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18060F751F42BE850049FC17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		18060F781F42BE850049FC17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				D2371DB5208783E200588BEC /* ExampleProgressViewController.swift */,
 				D2371DB720878AC700588BEC /* ExampleLoadingViewController.swift */,
 				18060F811F42BED10049FC17 /* ViewController.swift */,
+				0778B4A123ADBFD00091BAD8 /* GradientProgressView.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				18060F871F42BED10049FC17 /* ViewController.swift in Sources */,
 				18060F891F42BED10049FC17 /* UINavigationController+OSProgressBar.swift in Sources */,
 				18060F851F42BED10049FC17 /* AppDelegate.swift in Sources */,
+				0778B4A223ADBFD00091BAD8 /* GradientProgressView.swift in Sources */,
 				D2371DB820878AC700588BEC /* ExampleLoadingViewController.swift in Sources */,
 				D2371DB6208783E200588BEC /* ExampleProgressViewController.swift in Sources */,
 			);

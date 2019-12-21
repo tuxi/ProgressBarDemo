@@ -8,11 +8,11 @@
 
 import UIKit
 
-public final class OSProgressView: UIImageView {
+public class OSProgressView: UIImageView {
     public var progress: CGFloat = 0 {
         didSet {
-            progress = min(1.0, progress)
-            progressBarWidthConstraint.constant = bounds.width * CGFloat(progress)
+            progress = max(0, min(1.0, progress))
+            progressBarWidthConstraint?.constant = bounds.width * CGFloat(progress)
             if let progressHandler = self.progressHandler {
                 progressHandler(progress)
             }
@@ -25,15 +25,19 @@ public final class OSProgressView: UIImageView {
         }
     }
     
-    internal let progressBar = UIImageView()
+    internal lazy var progressBar = progressBarClass.init()
     fileprivate var needsLoading: Bool = false
     fileprivate var isLoading: Bool = false
     
-    fileprivate let progressBarWidthConstraint : NSLayoutConstraint
+    fileprivate var progressBarWidthConstraint : NSLayoutConstraint?
     // loading时 使用centerX
     fileprivate var progressBarCenterXConstraint : NSLayoutConstraint?
     // progress时 使用left
     fileprivate var progressBarLeftConstraint : NSLayoutConstraint?
+    
+    var progressBarClass: UIImageView.Type {
+        return UIImageView.self
+    }
     
     @objc public dynamic var trackTintColor : UIColor? = .clear {
         didSet {
@@ -75,11 +79,11 @@ public final class OSProgressView: UIImageView {
         }
         
         progressBar.alpha = 1.0
-        progressBarWidthConstraint.constant = bounds.width * CGFloat(1.0)
+        progressBarWidthConstraint?.constant = bounds.width * CGFloat(1.0)
         UIView.animate(withDuration: duration-0.1, animations: {
             self.layoutIfNeeded()
         }) { (finished) in
-            self.progressBarWidthConstraint.constant = 0.0
+            self.progressBarWidthConstraint?.constant = 0.0
             self.progressBar.alpha = 0.0
             UIView.animate(withDuration: 0.1, animations: {
                 self.layoutIfNeeded()
@@ -99,15 +103,24 @@ public final class OSProgressView: UIImageView {
     
     public override func layoutSubviews() {
         superview?.layoutSubviews()
-//        progress = min(1.0, progress)
-//        progressBarWidthConstraint.constant = bounds.width * CGFloat(progress)
+//        progress = max(0, min(1.0, progress))
+//        progressBarWidthConstraint?.constant = bounds.width * CGFloat(progress)
     }
 
     /* ====================================================================== */
     // MARK: - initializer
     /* ====================================================================== */
     public override init(frame: CGRect) {
-        
+        super.init(frame: frame)
+        setupUI()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupUI()
+    }
+    
+    private func setupUI() {
         progressBarWidthConstraint = NSLayoutConstraint(item: progressBar,
                                                         attribute: .width,
                                                         relatedBy: .equal,
@@ -115,8 +128,6 @@ public final class OSProgressView: UIImageView {
                                                         attribute: .notAnAttribute,
                                                         multiplier: 1.0,
                                                         constant: frame.width * CGFloat(progress))
-        
-        super.init(frame: frame);
         
         progressBarCenterXConstraint = NSLayoutConstraint(item: progressBar, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0.0)
         
@@ -151,16 +162,11 @@ public final class OSProgressView: UIImageView {
         progressBar.translatesAutoresizingMaskIntoConstraints = false
         
         addConstraints([
-            progressBarWidthConstraint,
+            progressBarWidthConstraint!,
             progressBarLeftConstraint!,
             bottomConstraint,
             topConstraint
             ])
-        
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     public func setProgress(progress: CGFloat, animated: Bool) {
@@ -174,7 +180,7 @@ public final class OSProgressView: UIImageView {
         
         self.progress = progress
         
-        UIView.animate(withDuration: duration) { 
+        UIView.animate(withDuration: duration) {
             self.layoutIfNeeded()
         }
     }
@@ -199,7 +205,7 @@ public final class OSProgressView: UIImageView {
     public func cancel() {
         setProgress(progress: 0.0, animated: true)
         
-        UIView.animate(withDuration: 0.25, animations: { 
+        UIView.animate(withDuration: 0.25, animations: {
             self.progressBar.alpha = 0.0
         }) { (finished: Bool) in
             if let cancellationHandler = self.cancellationHandler {

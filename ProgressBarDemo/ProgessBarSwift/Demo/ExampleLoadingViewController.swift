@@ -11,9 +11,9 @@ import UIKit
 class ExampleLoadingViewController: UIViewController {
     static let BaseTag: Int = 100
     private var timer: Timer?
-    public lazy var progressView: OSProgressView = {
+    public lazy var progressView: GradientProgressView = {
         
-        let progressView = OSProgressView(frame: .zero)
+        let progressView = GradientProgressView(frame: .zero)
         progressView.autoresizingMask = [
             .flexibleWidth, .flexibleTopMargin
         ]
